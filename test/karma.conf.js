@@ -16,6 +16,18 @@ module.exports = function(config) {
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
 
+    // generate js files from html templates+
+    preprocessors: {
+      'app/shared/**/*.html': 'ng-html2js'
+    },
+
+    // needed if you have used the Yeoman's generator-angular or the app dir
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app',
+      moduleName: 'ngTemplates' //you can name this whatever you want
+    },
+
+
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
@@ -28,12 +40,13 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
-     // 'app/old-scripts/**/*.js',
+
       'app/*.js',
       'app/components/**/*.js',
-      //'app/shared/**/*.js',
+      'app/shared/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js',
+      'app/shared/**/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -59,7 +72,8 @@ module.exports = function(config) {
     plugins: [
       'karma-phantomjs-launcher',
       'karma-chrome-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-ng-html2js-preprocessor'
     ],
 
     // Continuous Integration mode

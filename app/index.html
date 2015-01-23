@@ -22,15 +22,12 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/computer_service_registry">Home</a></li>
-        </ul>
-        <h3 class="text-muted">BBSBluePrint</h3>
-      </div>
-
-      <div ng-view=""></div>
+        <a href="/computer_service_registry">Home</a>
+        <hr>
+        <div ng-view=""></div>
     </div>
+
+
 
 
     <!-- build:js(.) scripts/oldieshim.js -->
@@ -57,7 +54,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="/app.js"></script>
         <script src="/components/service_registry/srController.js"></script>
-
+        <script src="/shared/doubleInput/double_inputDirective.js"></script>
         <!-- endbuild -->
 </body>
 </html>

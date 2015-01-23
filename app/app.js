@@ -23,7 +23,7 @@ angular
     $routeProvider
       .when('/computer_service_registry', {
         templateUrl: 'components/service_registry/srView.html',
-        controller: 'SeriveRegisty'
+        controller: 'SeriveRegistyCtrl'
       })
 
       .otherwise({
