@@ -6,16 +6,17 @@ angular.module('appServiceRegirty')
       replace: true,
       scope: {
         record: '=',
-        atKey: '@',
-        atValue: '@',
-       // live: '@',
-        required: '@'
-       // event: '@'
+        attrkey: '@',
+        attrvalue: '@'
       },
 
       require: '^form',
 
-      link: function ($scope, element, attr, form) {
+      link: function ($scope, element, attrs, form) {
+
+
+  //        var test = $scope.$eval(attrs.atKey);
+//console.log(attrs.$attr.attrkey);
 
           // $scope.$on('record:invalid', function () {
           //   $scope[$scope.field].$setDirty();

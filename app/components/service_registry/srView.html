@@ -1,7 +1,55 @@
 <form name='editContact' novalidate class=''>
-  <double-field record='thisisfromservice' atKey='someValue' atValue='value' required='true' ></double-field>
+
+ <ui-select ng-model='employee.selected' theme='bootstrap' reset-search-input='false'>
+            <ui-select-match placeholder='Enter a name...'>
+                {{$select.selected.name}}
+            </ui-select-match>
+
+            <ui-select-choices repeat='e in employees | filter: $select.search'>
+                {{e.name}}  &lt;{{e.email}}&gt;
+            </ui-select-choices>
+        </ui-select>
+        {{employees}}
+  {{realm}}
+  <hr>
+  <ul>
+    <li ng-repeat='businessscop in businessscopes'>
+      <label for='{{businessscop.name}}'><input id='{{businessscop.name}}' checked type='checkbox' name='{{businessscop.name}}'>{{businessscop.name}}</label>
+    </li>
+  </ul>
+
+  <hr>
+  <double-field record='attributes' attrkey='From - dd/mm/yyyy' attrvalue='Factor' required='true' ></double-field>
+  <table>
+    <tr>
+      <th>From - dd/mm/yyyy</th>
+      <th colspan="2">Factor</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="pricefactor in pricefactors">
+      <td>{{pricefactor.attKey}}</td>
+      <td>{{pricefactor.priceFactor}}</td>
+      <td><button>remove</button></td>
+    </tr>
+  </table>
+
+
+  <hr>
+  <double-field record='attributes' attrkey='Attribute Key' attrvalue='Attribute Value' required='true' ></double-field>
+  <table>
+    <tr>
+      <th>Attribute Key</th>
+      <th colspan="2">Attribute Value</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="attribute in attributes">
+      <td>{{attribute.attKey}}</td>
+      <td>{{attribute.attValue}}</td>
+      <td><button>remove</button></td>
+    </tr>
+  </table>
+
 </form>
 
 
-<h1>test</h1>
 

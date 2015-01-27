@@ -11,8 +11,6 @@ describe('double-field directive', function() {
 
     beforeEach(module('ngTemplates'));
 
-     //beforeEach(module('/app/shared/doubleInput/double_inputView.html'));
-
     // before each test, creates a new fresh scope
     // the inject function interest is to make use of the angularJS
     // dependency injection to get some other services in our test
@@ -21,7 +19,6 @@ describe('double-field directive', function() {
         scope = $rootScope.$new();
         scope.testModel = 42;
     }));
-
 
     function compileDirective(tpl) {
         // function to compile a fresh directive with the given template, or a default one
@@ -41,20 +38,6 @@ describe('double-field directive', function() {
         scope.$digest();
     }
 
-
-    // function compileDirective(tpl) {
-    //   inject(function($rootScope, $compile) {
-    //   //scope = $rootScope.$new();
-
-    //     elm = angular.element('<double-field record="" atKey="someValue" atValue="value" required="true" ></double-field>');
-
-    //     scope.record = 'somedata';
-
-    //     elm = $compile(elm)(scope);
-    //     scope.$digest();
-    //   });
-    // }
-
     describe('initialisation', function() {
         // before each test in this block, generates a fresh directive
 
@@ -63,19 +46,23 @@ describe('double-field directive', function() {
         });
 
         // a single test example, check the produced DOM
-        it('should produce 2 input fields', function() {
+        it('should produce 2 input fields ', function() {
           console.log(elm.find('input'));
             expect(elm.find('input').length).toEqual(2);
-            //expect(elm.find('div').length).toEqual(1);
         });
 
-        // it("should behave...", function() {
+        it('should produce 2 input fields ', function() {
+            console.log(elm.find('button'));
+            expect(elm.find('button').length).toEqual(1);
+        });
+        it("should have diabled button", function() {
+            console.log(elm.find('button').attr('disabled'));
+            expect(elm.find('button').attr('disabled')).toBeTruthy();
+        });
 
-        // });
-
-        // it('should check validity on init', function() {
-        //     expect(scope.form.$valid).toBeTruthy();
-        // });
+        it('should check validity on init', function() {
+            expect(scope.form.$valid).toBeTruthy();
+        });
     });
 
  //    it('should update form validity initialy', function() {
