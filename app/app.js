@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.select'
+    'ui.select',
+    'angularTreeview'
   ])
   .config(function ($routeProvider , $locationProvider) {
     $routeProvider
