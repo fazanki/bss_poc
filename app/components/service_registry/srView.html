@@ -1,16 +1,20 @@
 <form name='editContact' novalidate class=''>
 
- <ui-select ng-model='employee.selected' theme='bootstrap' reset-search-input='false'>
-            <ui-select-match placeholder='Enter a name...'>
-                {{$select.selected.name}}
-            </ui-select-match>
+  <label>Service Message</label>
+  <textarea>{{message}}</textarea>
 
-            <ui-select-choices repeat='e in employees | filter: $select.search'>
-                {{e.name}}  &lt;{{e.email}}&gt;
-            </ui-select-choices>
-        </ui-select>
-        {{employees}}
-  {{realm}}
+
+  <hr>
+  <ui-select ng-model='realmselected.selected' theme='bootstrap' reset-search-input='false'>
+    <ui-select-match placeholder='Search'>
+        {{$select.selected.name}}
+    </ui-select-match>
+
+    <ui-select-choices repeat='e in realm | filter: $select.search'>
+        {{e.name}}
+    </ui-select-choices>
+  </ui-select>
+
   <hr>
   <ul>
     <li ng-repeat='businessscop in businessscopes'>
@@ -48,7 +52,6 @@
       <td><button>remove</button></td>
     </tr>
   </table>
-
 </form>
 
 

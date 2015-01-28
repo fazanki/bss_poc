@@ -62,7 +62,8 @@
         "id": 1,
         "name": "Online"
     },
-    "realm": {
+    "realm": [
+    {
         "lastUpdated": 1420727755393,
         "transactionalLastUpdated": 1420727755393,
         "lastUpdatedBy": "InitialLoad",
@@ -70,6 +71,15 @@
         "id": 1,
         "name": "Campus/CIPE"
     },
+    {
+        "lastUpdated": 1420727755393,
+        "transactionalLastUpdated": 1420727755393,
+        "lastUpdatedBy": "InitialLoad",
+        "state": "ACTIVE",
+        "id": 1,
+        "name": "Something Campus/CIPE"
+    }
+    ],
     "businessScopes": {
         "businessScope": [
             {
