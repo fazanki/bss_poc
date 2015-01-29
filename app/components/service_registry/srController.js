@@ -10,13 +10,16 @@
 angular.module('appServiceRegirty')
   .controller('SeriveRegistyCtrl', function ($scope, ComputeService) {
 
+    $scope.realmselected = {};
+    $scope.statusesselected = {}
+
     // RESTfull service call
     ComputeService.getOssLocations().success(function(data){
       $scope.attributes = data.ossLocationAttributes.attribute;
       $scope.pricefactors = data.ossLocationPrices.price;
       $scope.businessscopes = data.businessScopes.businessScope;
       $scope.realm = data.realm;
-      $scope.realmselected = {};
+
       $scope.message = data.message;
     });
 

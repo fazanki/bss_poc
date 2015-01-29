@@ -1,7 +1,7 @@
 <form name='editContact' novalidate class=''>
 
   <label>Status</label>
-  <ui-select ng-model='realmselected.selected' theme='bootstrap' reset-search-input='false'>
+  <ui-select ng-model='statusesselected.selected' theme='bootstrap' reset-search-input='false'>
     <ui-select-match placeholder='Search'>
         {{$select.selected.name}}
     </ui-select-match>
@@ -10,6 +10,8 @@
         {{e.name}}
     </ui-select-choices>
   </ui-select>
+
+  <hr>
 
   <label for='textArea'>Service Message</label>
   <textarea class="form-control" id='textArea'>{{message}}</textarea>
@@ -54,7 +56,7 @@
     <tr ng-repeat="pricefactor in pricefactors">
       <td>{{pricefactor.attKey}}</td>
       <td>{{pricefactor.priceFactor}}</td>
-      <td><button>remove</button></td>
+      <td><button><span class="glyphicon glyphicon-remove-circle"></span></button></td>
     </tr>
   </table>
 
