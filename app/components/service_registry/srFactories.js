@@ -1,9 +1,20 @@
 angular.module('appServiceRegirty')
     .factory('ComputeService', function ($http) {
-      var url = 'mock.computesevice.json';
+      var ossLocations = 'mock.computesevice.json';
+          locations = 'mock.locations.json';
+          statuses ='mock.statuses.json'
       return {
-        get: function () {
-            return $http.get(url);
+
+        getOssLocations: function () {
+            return $http.get(ossLocations);
+        },
+        getLocations: function() {
+            return $http.get(locations);
+        },
+
+        getLocations: function() {
+            return $http.get(statuses);
         }
+
       };
     });

@@ -11,7 +11,7 @@ angular.module('appServiceRegirty')
   .controller('SeriveRegistyCtrl', function ($scope, ComputeService) {
 
     // RESTfull service call
-    ComputeService.get().success(function(data){
+    ComputeService.getOssLocations().success(function(data){
       $scope.attributes = data.ossLocationAttributes.attribute;
       $scope.pricefactors = data.ossLocationPrices.price;
       $scope.businessscopes = data.businessScopes.businessScope;
@@ -20,6 +20,21 @@ angular.module('appServiceRegirty')
       $scope.message = data.message;
     });
 
+    ComputeService.getLocations().success(function(data){
+      // $scope.treedata = data;
+    });
+
+
+    ComputeService.getLocations().success(function(data){
+       $scope.statuses = data;
+    });
+
+
+
+    /// scope funcitons
+    $scope.remove = function (test) {
+      delete $scope.attributes[0]
+    };
 
     $scope.treedata = [
       { "label" : "User", "id" : "role1", "children" : [

@@ -1,7 +1,11 @@
-<div class='attributes'>
-    <label for='key'>{{attrkey}}</label>
-    <input ng-model='record[field][0]' type='text' name='key'>
-    <label for='key'>{{attrvalue}}</label>
-    <input ng-model='record[field][0]' type='text' name='value'>
-    <button ng-disabled="{{disabled}}" type='button'>Add</button>
+<div class='attributes' ng-form="{{field}}" ng-class="{ 'has-error': fielda.$invalid }">
+    <div class='col-sm-4'>
+      <label for='key'>{{attrkey}}</label>
+      <input class='form-control' ng-model='fielda' type='text' name='key'>
+    </div>
+    <div class='col-sm-4'>
+      <label for='key'>{{attrvalue}}</label>
+      <input class='form-control' ng-model='fieldv' type='text' name='value'>
+    </div>
+    <button disabled  class="btn btn-primary" ng-click="add()"> Add </button>
 </div>

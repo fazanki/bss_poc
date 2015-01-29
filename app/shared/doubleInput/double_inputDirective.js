@@ -7,27 +7,27 @@ angular.module('appServiceRegirty')
       scope: {
         record: '=',
         attrkey: '@',
-        attrvalue: '@'
+        attrvalue: '@',
+        fielda: '@',
+        fieldv: '@'
       },
 
       require: '^form',
 
       link: function ($scope, element, attrs, form) {
 
-
   //        var test = $scope.$eval(attrs.atKey);
-//console.log(attrs.$attr.attrkey);
+          //console.log(attrs.$attr.attrkey);
 
           // $scope.$on('record:invalid', function () {
           //   $scope[$scope.field].$setDirty();
           // });
 
-          // $scope.types = FieldTypes;
+          // $scope.types = FieldTypes
 
-          // $scope.remove = function (field) {
-          //     delete $scope.record[field];
-          //     $scope.blurUpdate();
-          // };
+          $scope.add = function () {
+            alert('added');
+          }
 
           // $scope.blurUpdate = function () {
           //     console.log('valid= ' + form.$valid);
